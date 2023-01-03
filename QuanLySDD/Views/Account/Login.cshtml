@@ -1,0 +1,46 @@
+﻿@model QuanLySDD.Models.account
+@{
+    ViewBag.Title = "Login";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creative Colorlib SignUp Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/Content/Login.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+</head>
+<body>
+    
+        <div class="login">
+            <div class="login-header">
+                <h1>Login</h1>
+            </div>
+            <div class="login-form">
+                <form method="post">
+                    <h3>Username:</h3>
+                    <input type="text" placeholder="Username" name="username" /><br>
+                    <h3>Password:</h3>
+                    <input type="password" placeholder="Password" name="password" />
+                    <br>
+                    <button>
+
+                        <input type="submit" value="Login" class="login-button" />
+                    </button>
+                </form>                
+                <br>
+                Don't have an Account? @Html.ActionLink("Sign Up", "Register", "Account")
+            </div>
+        </div>
+    
+    
+</body>
+</html>
+
+@*<form method="post">
+    username: <input type="text" name="username"/>
+    password: <input type="password" name="password"/>
+    <input type="submit" value="Login" />
+</form>*@

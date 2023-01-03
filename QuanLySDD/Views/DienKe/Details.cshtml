@@ -1,0 +1,49 @@
+﻿@model QuanLySDD.Models.dienke
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>dienke</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.madienke)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.madienke)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.thang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.giadien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.giadien)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.madienke }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

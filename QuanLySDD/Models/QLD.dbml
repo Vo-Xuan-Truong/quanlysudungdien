@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLSDD" Class="QLDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-V16RD61;Initial Catalog=QLSDD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLSDDConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.account" Member="accounts">
+    <Type Name="account">
+      <Column Name="username" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="canho" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="role" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="canho_account" Member="canho1" ThisKey="canho" OtherKey="macanho" Type="canho" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dienke" Member="dienkes">
+    <Type Name="dienke">
+      <Column Name="madienke" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="thang" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="nam" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="giadien" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="dienke_dsthanhtoan" Member="dsthanhtoans" ThisKey="madienke" OtherKey="madienke" Type="dsthanhtoan" />
+      <Association Name="dienke_sudungdien" Member="sudungdiens" ThisKey="madienke" OtherKey="madienke" Type="sudungdien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.canho" Member="canhos">
+    <Type Name="canho">
+      <Column Name="macanho" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenchucanho" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="gioitinh" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="quequan" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="sodienthoai" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cccd" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Association Name="canho_account" Member="accounts" ThisKey="macanho" OtherKey="canho" Type="account" />
+      <Association Name="canho_dsthanhtoan" Member="dsthanhtoans" ThisKey="macanho" OtherKey="macanho" Type="dsthanhtoan" />
+      <Association Name="canho_sudungdien" Member="sudungdiens" ThisKey="macanho" OtherKey="canho" Type="sudungdien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dsthanhtoan" Member="dsthanhtoans">
+    <Type Name="dsthanhtoan">
+      <Column Name="mathanhtoan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="macanho" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="madienke" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tinhtrang" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="canho_dsthanhtoan" Member="canho" ThisKey="macanho" OtherKey="macanho" Type="canho" IsForeignKey="true" />
+      <Association Name="dienke_dsthanhtoan" Member="dienke" ThisKey="madienke" OtherKey="madienke" Type="dienke" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sudungdien" Member="sudungdiens">
+    <Type Name="sudungdien">
+      <Column Name="masudung" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="canho" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="madienke" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="soluongdien" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="canho_sudungdien" Member="canho1" ThisKey="canho" OtherKey="macanho" Type="canho" IsForeignKey="true" />
+      <Association Name="dienke_sudungdien" Member="dienke" ThisKey="madienke" OtherKey="madienke" Type="dienke" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

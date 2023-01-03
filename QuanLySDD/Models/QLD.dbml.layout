@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QLD">
+  <DataContextMoniker Name="/QLDDataContext" />
+  <nestedChildShapes>
+    <classShape Id="33a4cd21-e18e-4d36-9941-e524f0f9100b" absoluteBounds="3.5, 3.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QLDDataContext/account" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50e9129c-9fda-4f92-81ec-90287d7c4e4f" absoluteBounds="3.515, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="468245d6-fb67-4ca7-91e7-a91ac8326ab9" absoluteBounds="0.75, 0.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QLDDataContext/dienke" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0b5c014-5595-4b4c-81c2-abca181f0875" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3f062a6f-3fd3-4bc3-886c-8179c20436ee" absoluteBounds="6.875, 3.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/QLDDataContext/canho" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ad2c60b-4aca-4211-86ac-455ee676b58c" absoluteBounds="6.89, 4.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e310a575-1164-4e81-8e21-e348ce2499e2" absoluteBounds="3.5, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QLDDataContext/dsthanhtoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="838ad897-7651-460b-a576-bd38a534a41a" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="07d161c8-e8da-4ff0-980c-f1effc7776e3" absoluteBounds="0.5, 5.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QLDDataContext/sudungdien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30d06a8e-fbba-430a-9790-8a86854137c1" absoluteBounds="0.51500000000000012, 6.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.875 : 4.53929768880208); (5.5 : 4.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLDDataContext/canho/canho_account" />
+      <nodes>
+        <classShapeMoniker Id="3f062a6f-3fd3-4bc3-886c-8179c20436ee" />
+        <classShapeMoniker Id="33a4cd21-e18e-4d36-9941-e524f0f9100b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.875 : 3.625); (7.875 : 1.53929768880208); (5.5 : 1.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLDDataContext/canho/canho_dsthanhtoan" />
+      <nodes>
+        <classShapeMoniker Id="3f062a6f-3fd3-4bc3-886c-8179c20436ee" />
+        <classShapeMoniker Id="e310a575-1164-4e81-8e21-e348ce2499e2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.99644653320312); (3.5 : 1.99644653320312)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLDDataContext/dienke/dienke_dsthanhtoan" />
+      <nodes>
+        <classShapeMoniker Id="468245d6-fb67-4ca7-91e7-a91ac8326ab9" />
+        <classShapeMoniker Id="e310a575-1164-4e81-8e21-e348ce2499e2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.875 : 5.58579752604167); (2.14583333333333 : 5.58579752604167 : JumpStart); (1.97916666666667 : 5.58579752604167 : JumpEnd); (1.5 : 5.58579752604167); (1.5 : 5.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLDDataContext/canho/canho_sudungdien" />
+      <nodes>
+        <classShapeMoniker Id="3f062a6f-3fd3-4bc3-886c-8179c20436ee" />
+        <classShapeMoniker Id="07d161c8-e8da-4ff0-980c-f1effc7776e3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.0625 : 2.45359537760417); (2.0625 : 5.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLDDataContext/dienke/dienke_sudungdien" />
+      <nodes>
+        <classShapeMoniker Id="468245d6-fb67-4ca7-91e7-a91ac8326ab9" />
+        <classShapeMoniker Id="07d161c8-e8da-4ff0-980c-f1effc7776e3" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

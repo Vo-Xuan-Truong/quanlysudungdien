@@ -1,0 +1,59 @@
+﻿@model IEnumerable<QuanLySDD.Models.dienke>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<form method="post">
+    <div>
+       
+        Nhập tên:
+        <input type="text" name="txtSearchdk" placeholder="nhập mã điện kế" />
+
+        <input id="submit1" type="submit" value="submit" />
+    </div>
+</form>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.madienke)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giadien)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.madienke)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.thang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nam)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.giadien)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.madienke }) |
+        @Html.ActionLink("Details", "Details", new { id = item.madienke }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.madienke })
+    </td>
+</tr>
+}
+
+</table>
